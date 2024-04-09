@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @EnableJpaRepositories(basePackages = "repository")
 @EntityScan(basePackages = "model")
-@SpringBootApplication(scanBasePackages = {"config", "controller", "model", "service", "impl", "service", "dto", "config"})
+@SpringBootApplication(scanBasePackages = {"controller","service","dto","config"})
 public class ProjetoApplication {
 
 	public static void main(String[] args) {
