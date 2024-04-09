@@ -7,6 +7,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import service.ModeloService;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/modelos")
 public class ModeloController {
@@ -22,6 +24,12 @@ public class ModeloController {
     public ResponseEntity<ModeloDTO> getModelo(@PathVariable Long id) {
         ModeloDTO modeloDTO = modeloService.getModeloById(id);
         return ResponseEntity.ok(modeloDTO);
+    }
+
+    @GetMapping("/modelos")
+    public ResponseEntity<List<ModeloDTO>> getAllModelos() {
+        List<ModeloDTO> modelos = modeloService.getAllModelos();
+        return ResponseEntity.ok(modelos);
     }
 
     @PostMapping

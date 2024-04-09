@@ -7,7 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import repository.MarcaRepository;
 import service.MarcaService;
+import utils.DTOUtils;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -31,6 +33,12 @@ public class MarcaServiceImpl implements MarcaService {
         } else {
             throw new RuntimeException("Não foi encontrada nenhuma marca com o ID: " + id);
         }
+    }
+
+    @Override
+    public List<MarcaDTO> getAllMarcas() {
+        List<Marca> marcas = marcaRepository.findAll();
+        return DTOUtils.convertMarcaListToDTOList(marcas);
     }
 
     @Override

@@ -7,7 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import repository.ModeloRepository;
 import service.ModeloService;
+import utils.DTOUtils;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -31,6 +33,12 @@ public class ModeloServiceImpl implements ModeloService {
         } else {
             throw new RuntimeException("Não foi encontrado nenhum modelo com o ID: " + id);
         }
+    }
+
+    @Override
+    public List<ModeloDTO> getAllModelos() {
+        List<Modelo> modelos = modeloRepository.findAll();
+        return DTOUtils.convertModeloListToDTOList(modelos);
     }
 
     @Override

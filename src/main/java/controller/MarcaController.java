@@ -7,6 +7,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import service.MarcaService;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/marcas")
 public class MarcaController {
@@ -23,6 +25,13 @@ public class MarcaController {
         MarcaDTO marcaDTO = marcaService.getMarcaById(id);
         return ResponseEntity.ok(marcaDTO);
     }
+
+    @GetMapping("/marcas")
+    public ResponseEntity<List<MarcaDTO>> getAllMarcas() {
+        List<MarcaDTO> marcas = marcaService.getAllMarcas();
+        return ResponseEntity.ok(marcas);
+    }
+
 
     @PostMapping
     public ResponseEntity<MarcaDTO> createMarca(@RequestBody MarcaDTO marcaDTO) {

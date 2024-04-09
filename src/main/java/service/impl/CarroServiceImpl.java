@@ -7,7 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import repository.CarroRepository;
 import service.CarroService;
+import utils.DTOUtils;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -39,6 +41,12 @@ public class CarroServiceImpl implements CarroService {
         BeanUtils.copyProperties(carroDTO, carro);
         carroRepository.save(carro);
         return carroDTO;
+    }
+
+    @Override
+    public List<CarroDTO> getAllCarros() {
+        List<Carro> carros = carroRepository.findAll();
+        return DTOUtils.convertCarroListToDTOList(carros);
     }
 
     @Override

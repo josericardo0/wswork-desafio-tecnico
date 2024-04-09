@@ -7,6 +7,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import service.CarroService;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/carros")
 public class CarroController {
@@ -22,6 +24,12 @@ public class CarroController {
     public ResponseEntity<CarroDTO> getCarro(@PathVariable Long id) {
         CarroDTO carroDTO = carroService.getCarroById(id);
         return ResponseEntity.ok(carroDTO);
+    }
+
+    @GetMapping("/carros")
+    public ResponseEntity<List<CarroDTO>> getAllCarros() {
+        List<CarroDTO> carros = carroService.getAllCarros();
+        return ResponseEntity.ok(carros);
     }
 
     @PostMapping
