@@ -26,7 +26,7 @@ public class CarroController {
         return ResponseEntity.ok(carroDTO);
     }
 
-    @GetMapping("/carros")
+    @GetMapping
     public ResponseEntity<List<CarroDTO>> getAllCarros() {
         List<CarroDTO> carros = carroService.getAllCarros();
         return ResponseEntity.ok(carros);

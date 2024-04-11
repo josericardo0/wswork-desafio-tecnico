@@ -26,7 +26,7 @@ public class ModeloController {
         return ResponseEntity.ok(modeloDTO);
     }
 
-    @GetMapping("/modelos")
+    @GetMapping
     public ResponseEntity<List<ModeloDTO>> getAllModelos() {
         List<ModeloDTO> modelos = modeloService.getAllModelos();
         return ResponseEntity.ok(modelos);
