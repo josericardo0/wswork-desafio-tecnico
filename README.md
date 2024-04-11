@@ -22,9 +22,51 @@ de Cors.
 ## Como testar a aplicação:
 
 - Faça o clone do repositório na sua máquina, em uma pasta de sua escolha, ou baixe o .zip, extraia e abre a pasta resultante da extração na sua IDE.
-- Uma vez que estiver com o projeto aberto, execute "mvn clean install" no terminal (sem as aspas) para buildar.
+- Uma vez que estiver com o projeto aberto, abra o arquivo docker-compose, troque o caminho do "context" e do "dockerfile" pelos caminhos que esses arquivos têm na sua máquina.
+- Execute "gradle build" no terminal (sem as aspas) para buildar.
 - Execute o comando docker-compose up --build para buildar e subir o contêiner logo em seguida.
 - Acessar a URL de cada endpoint para fins de teste (/carros, /marcas, /modelos).
+
+
+- **Requisições para teste:**
+- POST de Carros
+
+```json
+{
+    "id": 1,
+    "timestampCadastro": "2024-04-10T10:00:00",
+    "modeloId": 1,
+    "ano": 2023,
+    "combustivel": "Gasolina",
+    "numPortas": 4,
+    "cor": "Preto"
+}
+```
+- POST de Marcas
+
+```json
+
+{
+    "id": 2,
+    "nomeMarca": "Toyota"
+}
+
+```
+
+- POST de Modelos
+
+```json
+{
+    "id": 1,
+    "nome": "Etios",
+    "marcaId": 2,
+    "valorFipe": 50000.00
+}
+
+
+```
+
+
 
   
 ## Especificações técnicas:
