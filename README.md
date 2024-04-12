@@ -8,11 +8,17 @@ Desafio proposto para a vaga de desenvolvedor backend na empresa WS Work. Basica
 
 - **Primeiro requisito:** Criar uma aplicação Springboot, com
 acesso a BD (spring-data) e que exponha endpoints Rest. A aplicação tem o seguinte modelo ER:
-- ![image](https://github.com/josericardo0/wswork-api-cars/assets/92414548/bf84d552-2ac7-4b8e-815e-eecfdaf46f55)
+
+- ![image](https://github.com/josericardo0/wswork-desafio-tecnico/assets/92414548/7711ecf7-1d15-4b81-9d09-60f50de17e65)
+
+
 
 
 - **Segundo requisito:** Crie um endpoint que entregue uma listagem, com o seguinte formato:
-![image](https://github.com/josericardo0/wswork-api-cars/assets/92414548/f4cd82bf-7889-41a8-a042-5e05d901d39b)
+
+- ![image](https://github.com/josericardo0/wswork-desafio-tecnico/assets/92414548/0c1a4817-bd98-49a6-8056-e0fde3640f11)
+
+
 
 
 - **Terceiro requisito:** O frontend poderá estar hospedado em outro domínio, não deixe de verificar a estratégia
